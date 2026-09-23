@@ -69,14 +69,14 @@ img, svg { display: block; }
 /* ===== Hero ===== */
 .hero {
   position: relative;
-  min-height: 316px;
+  min-height: 304px;
   overflow: hidden;
   isolation: isolate;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding: 16px var(--gutter) 12px;
+  padding: 4px var(--gutter) 12px;
   text-align: center;
 }
 
@@ -227,7 +227,7 @@ img, svg { display: block; }
     box-shadow: none;
     padding-bottom: env(safe-area-inset-bottom);
   }
-  .hero { padding-top: calc(16px + env(safe-area-inset-top)); }
+  .hero { padding-top: calc(4px + env(safe-area-inset-top)); }
   .content {
     padding-left: max(var(--gutter), env(safe-area-inset-left));
     padding-right: max(var(--gutter), env(safe-area-inset-right));
@@ -237,13 +237,13 @@ img, svg { display: block; }
 /* Very small phones (iPhone SE 1st gen, 320px) */
 @media (max-width: 350px) {
   :root { --gutter: 16px; }
-  .hero { min-height: 276px; padding-bottom: 10px; }
+  .hero { min-height: 264px; padding-bottom: 10px; }
   .row { gap: 12px; padding: 10px 12px; }
 }
 
 /* Landscape phones: shorter hero */
 @media (max-height: 500px) and (orientation: landscape) {
-  .hero { min-height: 0; padding-top: 8px; padding-bottom: 24px; }
+  .hero { min-height: 0; padding-top: 0; padding-bottom: 24px; }
   :root { --avatar: 150px; }
 }
 
