@@ -85,7 +85,7 @@ img, svg { display: block; }
   inset: -24px;
   z-index: -2;
   background: url("images/budapest-bg.webp") center / cover no-repeat;
-  filter: blur(2px) saturate(1.1);
+  filter: filter: blur(6px) saturate(1.1);
   transform: scale(1.05) translateZ(0);
 }
 
@@ -103,12 +103,16 @@ img, svg { display: block; }
 
 .avatar {
   width: var(--avatar);
-  height: var(--avatar);
-  border-radius: 50%;
-  object-fit: cover;
-  border: 1px solid var(--card);
-  outline: 1px solid rgba(246, 199, 160, .6);
-  box-shadow: 0 14px 30px -10px rgba(0, 0, 0, .6);
+  height: auto;              /* ne torzuljon, ha nem négyzetes a kivágás */
+  border: 0;
+  outline: 0;
+  border-radius: 0;          /* az alakot az alfacsatorna adja */
+  object-fit: contain;
+  /* drop-shadow az alakot követi, a box-shadow a doboz szélét rajzolná ki */
+  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, .45)) saturate(.97);
+  /* a váll alsó, egyenes vágása beleolvad a headerbe */
+  -webkit-mask-image: linear-gradient(180deg, #000 90%, transparent 100%);
+          mask-image: linear-gradient(180deg, #000 90%, transparent 100%);
   margin-bottom: 16px;
 }
 
