@@ -69,14 +69,14 @@ img, svg { display: block; }
 /* ===== Hero ===== */
 .hero {
   position: relative;
-  min-height: 340px;
+  min-height: 316px;
   overflow: hidden;
   isolation: isolate;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
-  padding: 40px var(--gutter) 12px;
+  padding: 16px var(--gutter) 12px;
   text-align: center;
 }
 
@@ -116,7 +116,7 @@ img, svg { display: block; }
   object-fit: contain;
   filter: drop-shadow(0 10px 18px rgba(0, 0, 0, .38)) saturate(.97);
   /* a kép alján lévő átlátszó sávot visszahúzzuk, hogy a név közel legyen */
-    margin-bottom: calc(var(--avatar) * -.04);
+  margin-bottom: calc(var(--avatar) * -.04);
 }
 
 .name {
@@ -185,7 +185,7 @@ img, svg { display: block; }
 .divider::before, .divider::after { content: ""; flex: 1; height: 1px; background: var(--line); }
 
 .cta {
-  margin-top: 20px;
+  margin: 0 0 16px;
   min-height: 52px;
   display: flex;
   align-items: center;
@@ -202,8 +202,6 @@ img, svg { display: block; }
 }
 .cta:active { transform: scale(.985); }
 .cta svg { width: 18px; height: 18px; }
-
-.foot { margin: 18px 0 0; text-align: center; font-size: 12.5px; color: var(--muted); }
 
 /* Focus */
 .row:focus-visible, .cta:focus-visible {
@@ -229,7 +227,7 @@ img, svg { display: block; }
     box-shadow: none;
     padding-bottom: env(safe-area-inset-bottom);
   }
-  .hero { padding-top: calc(40px + env(safe-area-inset-top)); }
+  .hero { padding-top: calc(16px + env(safe-area-inset-top)); }
   .content {
     padding-left: max(var(--gutter), env(safe-area-inset-left));
     padding-right: max(var(--gutter), env(safe-area-inset-right));
@@ -239,13 +237,13 @@ img, svg { display: block; }
 /* Very small phones (iPhone SE 1st gen, 320px) */
 @media (max-width: 350px) {
   :root { --gutter: 16px; }
-  .hero { min-height: 300px; padding-bottom: 10px; }
+  .hero { min-height: 276px; padding-bottom: 10px; }
   .row { gap: 12px; padding: 10px 12px; }
 }
 
 /* Landscape phones: shorter hero */
 @media (max-height: 500px) and (orientation: landscape) {
-  .hero { min-height: 0; padding-top: 32px; padding-bottom: 24px; }
+  .hero { min-height: 0; padding-top: 8px; padding-bottom: 24px; }
   :root { --avatar: 150px; }
 }
 
