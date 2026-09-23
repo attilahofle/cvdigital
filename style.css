@@ -14,7 +14,7 @@
   --display: "Bricolage Grotesque", "Figtree", system-ui, sans-serif;
   --body: "Figtree", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
   --gutter: 20px;
-  --avatar: min(66vw, 265px);
+  --avatar: min(82vw, 330px);
   --name: clamp(28px, 8.5vw, 34px);
 }
 
