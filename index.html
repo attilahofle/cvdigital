@@ -11,12 +11,13 @@
     <meta property="og:title" content="Attila Höfle – BudapestFlow Walking Tours">
     <meta property="og:description" content="Local Budapest guide. Save my contact, book a tour, read reviews.">
     <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="apple-touch-icon" href="images/attila-hofle.webp">
+    <link rel="apple-touch-icon" href="images/apple-touch-icon.png">
 
-    <link rel="preload" as="image" href="images/budapest-bg.webp">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Saját szerverről betöltött fontok és a fold feletti képek előtöltése -->
+    <link rel="preload" href="fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="fonts/bricolage-grotesque-700.woff2" as="font" type="font/woff2" crossorigin>
+    <link rel="preload" href="images/attila-hofle.webp" as="image" fetchpriority="high">
+    <link rel="preload" href="images/budapest-bg.webp" as="image">
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -27,7 +28,7 @@
         <header class="hero">
             <div class="hero-bg" aria-hidden="true"></div>
 
-            <img class="avatar" src="images/attila-hofle.webp" alt="Attila Höfle" width="449" height="400">
+            <img class="avatar" src="images/attila-hofle.webp" alt="Attila Höfle" width="449" height="400" fetchpriority="high" decoding="async">
             <h1 class="name">Attila Höfle</h1>
         </header>
 
