@@ -241,12 +241,12 @@ img, svg { display: block; }
   background: linear-gradient(180deg, var(--peach) 0%, var(--peach-2) 100%);
   color: var(--on-peach);
   font-weight: 700;
-  font-size: 15px;
+  font-size: 18px;
   text-decoration: none;
   box-shadow: 0 10px 24px -10px rgba(240, 179, 135, .6), inset 0 1px 0 rgba(255, 255, 255, .45);
 }
 .cta:active { transform: scale(.985); }
-.cta svg { width: 18px; height: 18px; }
+.cta svg { width: 20x; height: 20px; }
 
 /* Focus */
 .row:focus-visible, .cta:focus-visible {
