@@ -130,7 +130,7 @@ img, svg { display: block; }
   inset: -24px;
   z-index: -2;
   background: url("images/budapest-bg.webp") center / cover no-repeat;
-  filter: blur(2.8px) saturate(1.1);
+  filter: blur(2px) saturate(1.1);
   transform: scale(1.05) translateZ(0);
 }
 
