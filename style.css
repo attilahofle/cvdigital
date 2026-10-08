@@ -246,10 +246,15 @@ h1 {
   text-decoration: none;
   transition: background .15s, transform .15s;
 }
+/* tompa okker: ugyanaz a sárga, fakóbban, ragyogás nélkül;
+   korábbi: background: var(--yellow); color: var(--on-yellow); box-shadow: 0 12px 26px -12px rgba(244, 185, 66, .8)
+   másik változatok:
+   - krém: background: var(--card); border-color: #E2C27F; color: var(--heading); ikon: var(--ochre-text)
+   - navy: background: rgba(3, 26, 50, .55); border-color: rgba(244, 185, 66, .6); color: var(--on-dark) */
 .btn-primary {
-  background: var(--yellow);
+  background: #EEBF62; /* előző próbák: #E6C47E, #E9C274, #ECC069 */
   color: var(--on-yellow);
-  box-shadow: 0 12px 26px -12px rgba(244, 185, 66, .8);
+  box-shadow: 0 12px 28px -16px rgba(3, 26, 50, .55); /* mint a kártyák */
 }
 .btn:active { transform: scale(.985); }
 /* vastagabb ikon, hogy illeszkedjen a 700-as szöveghez */
@@ -337,7 +342,7 @@ h1 {
 }
 
 @media (hover: hover) and (pointer: fine) {
-  .btn-primary:hover { background: var(--yellow-hover); }
+  .btn-primary:hover { background: #E0AD4C; }
 }
 
 /* Nagyon kicsi telefonok (320px) */
