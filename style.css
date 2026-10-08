@@ -112,8 +112,13 @@ body {
   overflow-x: hidden;
   /* a görgetősáv rejtve, a görgetés (egér, érintés, billentyű) továbbra is működik */
   scrollbar-width: none;
+  /* Android Chrome a fentit a body-n nem veszi figyelembe: a body 30px-rel túlnyúlik jobbra,
+     a sáv így a képernyőn kívülre kerül, és a html (overflow: hidden) levágja.
+     A padding miatt a tartalom szélessége pontosan a képernyő szélessége marad. */
+  width: calc(100% + 30px);
+  padding-right: 30px;
   overscroll-behavior: none;
-  background: var(--navy-deep);
+  background: transparent; /* a html háttérrétege látsszon át */
   color: var(--on-dark);
   font: 450 17px/1.5 var(--font-text);
   -webkit-font-smoothing: antialiased;
@@ -124,8 +129,12 @@ body::-webkit-scrollbar { display: none; } /* régebbi Safari / Chrome */
 
 img, svg { display: block; }
 
-/* ===== Háttér: rögzített réteg (a background-attachment: fixed iOS-en hibás) ===== */
-.bg {
+/* ===== Háttér: rögzített réteg (a background-attachment: fixed iOS-en hibás) =====
+   A html elemen van, nem a görgetett body-n belül: így a Chrome görgetéskor nem mozgatja,
+   visszagörgetéskor sem ugrik. */
+html::before,
+html::after {
+  content: "";
   position: fixed;
   top: -30px;
   left: -30px;
@@ -133,14 +142,14 @@ img, svg { display: block; }
   height: calc(100vh + 60px); /* fallback */
   height: calc(100lvh + 60px); /* nagy viewport: a címsor ki/be csúszása nem méretezi át a hátteret */
   z-index: 0;
+  pointer-events: none;
+}
+html::before {
   background: url("images/budapest-bg.webp") center / cover no-repeat;
   filter: blur(7px) saturate(1.15);
   transform: translateZ(0);
 }
-.bg::after {
-  content: "";
-  position: absolute;
-  inset: 0;
+html::after {
   background: linear-gradient(180deg,
     rgba(3, 26, 50, .26) 0%,
     rgba(3, 26, 50, .48) 38%,
