@@ -108,6 +108,10 @@ body {
   margin: 0;
   height: 100%;
   overflow-y: auto;
+  /* a háttér 30px-rel túllóg a képernyőn (az elmosott szél miatt): ne legyen tőle vízszintes görgetősáv */
+  overflow-x: hidden;
+  /* a görgetősáv rejtve, a görgetés (egér, érintés, billentyű) továbbra is működik */
+  scrollbar-width: none;
   overscroll-behavior: none;
   background: var(--navy-deep);
   color: var(--on-dark);
@@ -115,6 +119,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -webkit-tap-highlight-color: transparent;
 }
+
+body::-webkit-scrollbar { display: none; } /* régebbi Safari / Chrome */
 
 img, svg { display: block; }
 
